@@ -68,7 +68,6 @@ Handle errors gracefully where possible.
 
 To run the project locally:
 
-```bash
 # Clone the repository (if provided)
 git clone [repo-url]
 
@@ -80,3 +79,35 @@ npm install
 
 # Start the server
 npm start
+
+
+============================
+ANSWER:
+
+Uses ethers.js to read public state from the USDC token contract on Ethereum mainnet:
+Contract: 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
+Fetches: name, symbol, decimals, totalSupply
+
+How to run
+npm run dev
+# or
+node src/index.js
+
+You can also call the endpoint manually:
+curl http://localhost:3001/api/AdminApiTest
+
+Output
+```
+{
+  "success": true,
+  "data": {
+    "contract": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "network": "ethereum-mainnet",
+    "name": "USD Coin",
+    "symbol": "USDC",
+    "decimals": 6,
+    "totalSupply": "51993107797.514184"
+  }
+}
+```
+
